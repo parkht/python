@@ -1,6 +1,7 @@
 import os
 
 infp = None
+outfp = None
 
 instr = ""
 
@@ -17,17 +18,19 @@ if os.path.exists(infn):
     print(instr, end="")
     print()
 
-outfn = input("복사된 파일명 :")
+while True:
+    outfn = input("복사된 파일명 :")
 
-if os.path.exists(outfn):
-    print("파일명이 존재 합니다.")
+    if os.path.exists(outfn):
+        print("파일명이 존재 합니다.")
 
-else:
-    outfp = open(outfn, "w", encoding="UTF-8")
+    else:
+        outfp = open(outfn, "w", encoding="UTF-8")
 
-    outfp.writelines(instr)
+        outfp.writelines(instr)
+
+        break
 
 outfp.close()
-
 infp.close()
 # 파일이 존재 하지 않는 경우 처리
