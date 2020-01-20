@@ -1,2 +1,4 @@
 [Python read text]
 read text test
+한글테스트
+줄바꿈 테스트

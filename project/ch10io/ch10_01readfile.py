@@ -12,7 +12,7 @@ infn = input("파일명 입력 :")
 if os.path.exists(infn):
     # 파일 읽기로 연결해서 사용
     # open(연결파일명, mode(r/w/+) r:읽기 w:쓰기 +:읽기쓰기
-    inpf = open(infn, "r")
+    infp = open(infn, "r")
     # 한줄 단위로 읽어와서 화면에 표시한다.
     while True:
         #  읽기
