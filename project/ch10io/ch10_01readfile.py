@@ -16,7 +16,7 @@ if os.path.exists(infn):
     # 한줄 단위로 읽어와서 화면에 표시한다.
     while True:
         #  읽기
-        instr = infp.readline()
+        instr = infp.readline() # 전체를 읽을땐 read()
         # 무한 while문을 빠져 나가는 조건 - 읽어 온 데이터가 없다.
         if not instr:
             break
