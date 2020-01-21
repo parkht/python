@@ -20,3 +20,4 @@ body = soup.find(id = 'body')
 # 텍스트 부분 출력하기
 print('#title = ' + title.string)
 print('#body = ' + body.string)
+print('h1의 id=' + soup.h1['id'])
