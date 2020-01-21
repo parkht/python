@@ -21,3 +21,6 @@ body = soup.find(id = 'body')
 print('#title = ' + title.string)
 print('#body = ' + body.string)
 print('h1의 id=' + soup.h1['id'])
+
+print('#%s = %s' % (soup.h1['id'], title.string))
+print('#%s = %s' % (soup.p['id'], body.string))
