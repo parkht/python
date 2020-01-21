@@ -31,6 +31,7 @@ tmn = soup.find_all('tmn')
 tmx = soup.find_all('tmx')
 # wf : 날씨 tmn : 최저기온 txm: 최고기온
 
+
 #print(soup)
 
 a=0
@@ -38,9 +39,9 @@ b=13
 
 for i in city:
     print('-----',i.string,'-----')
-    for k in range(a,b):
+    for k in range(a, b):
         print('시간 :', tmef[k].string)
-        print('날씨 :', wf[k+1].string)
+        print('날씨 :', wf[k+1].string)  # 맨 앞의 wf가 관련이 없어서 +1해서 맨 앞의 내용은 출력 안되게 함
         print('최저기온 :', tmn[k].string)
         print('최고기온 :', tmx[k].string)
     a= a+13
