@@ -3,20 +3,42 @@ pip install django
 django-admin startproject config
 ** manage.py가 있는 폴더에서 명령어 실행해야함
 "D:\git_hub\python\django\myconfig>" 여기서 실행
+
 --2)애플리케이션 생성
 python manage.py 옵션
                  startapp 애플리케이션명
 python manage.py startapp polls =>polls라는 폴더 생성이됨
   MTV - Model, Templates, View
   MVC - Model, View, Controller
+
 --3)애플리케이션 등록(settings.py)
   myconfig\config\settings.py => INSTALLED_APPS=[]여기에 polls 등록
   DATABASES = {}는 기본설정인 'db.sqlite3' 사용
+
 --4)기본 테이블 생성
 python manage.py migrate => db.sqlite3생성
 명령 프롬프트(cmd)에서
 c:\sqlite>sqlite3 d:\git_hub\python\django\myconfig\db.sqlite3
 .table
+
 --5)서버실행(python에서)
 python manage.py runserver
 멈추는 방법 ctrl + c
+
+--6)테이블 정의 및 생성(\polls\models.py)
+models.py
+테이블 생성 또는 변경 코드생성
+python manage.py makemigrations
+**테이블 생성 또는 변경 실제 적용
+python manage.py migrate
+(cmd에서).schema  => 테이블 생성 확인
+
+--7)템플릿파일생성(templates\polls\index.html)
+
+--8)경로설정(myconfig\config\urls.py)
+myconfig\config\urls.py를 myconfig\polls\urls.py로 복사한다.
+myconfig\polls\templates\polls\index.html 생성
+
+python manage.py runserver  => 서버를 시작
+
+# 회원가입--------------------------
