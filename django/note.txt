@@ -61,5 +61,7 @@ python manage.py migrate
 --7)템플릿파일생성(templates\member\list.html)
 
 --8)경로설정(myconfig\config\urls.py)
-myconfig\config\urls.py를 myconfig\polls\urls.py로 복사한다.
-myconfig\polls\templates\polls\index.html 생성
+myconfig\config\urls.py를 myconfig\member\urls.py로 복사한다.
+member\urls.py 수정 and myconfig\config\urls.py 수정
+member\views.py 수정
+myconfig\member\templates\member\list.html 생성
