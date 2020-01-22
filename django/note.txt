@@ -1,3 +1,16 @@
 pip install django
--- django 프로젝트 생성
+--1) django 프로젝트 생성
 django-admin startproject config
+** manage.py가 있는 폴더에서 명령어 실행해야함
+"D:\git_hub\python\django\myconfig>" 여기서 실행
+--2)애플리케이션 생성
+python manage.py 옵션
+                 startapp 애플리케이션명
+python manage.py startapp polls =>polls라는 폴더 생성이됨
+  MTV - Model, Templates, View
+  MVC - Model, View, Controller
+--3)애플리케이션 등록(settings.py)
+  myconfig\config\settings.py => INSTALLED_APPS=[]여기에 polls 등록
+  DATABASES = {}는 기본설정인 'db.sqlite3' 사용
+--4)기본 테이블 생성
+python manage.py migrate
