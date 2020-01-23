@@ -16,7 +16,7 @@ country_value = soup.select('a.head')
 for i in country_value:
     #print(i)
     print(i.h3.string)
-    k = i.select_one('div > span.value').string
+    k = i.select_one('div > .value').string
 
     w = i.select_one('div > span > span.blind')
     #  중간에 w 값이 None이 있어서 if로 w값이 None이면 출력을 안하게 만들었음

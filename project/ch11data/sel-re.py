@@ -14,4 +14,5 @@ soup = BeautifulSoup(html,'html.parser')
 
 # 정규표현식으로 href에서 https인 것 추출하기
 li = soup.find_all(href=re.compile(r'^https://|http://'))
+#print(li)
 for e in li: print(e.attrs['href'])
