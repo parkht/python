@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>질문 게시판</h3>
+    <lu>
+    {% for q in qs %}
+        <li>{{q.id}} {{q.question_text}} {{q.pub_date}}</li>
+    {% endfor %}
+    </lu>
+</body>
+</html>

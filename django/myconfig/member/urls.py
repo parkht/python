@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('', views.list), # http://localhost:8000/member
+    path('insert/', views.insert),
 ]

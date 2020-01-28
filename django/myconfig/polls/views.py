@@ -26,14 +26,26 @@ def test(request):
     # q.save()
 
     # 조회
-    qlist = Question.objects.all()
+    # qlist = Question.objects.all()
     # qlist = Question.objects.all().order_by('-id')  # -는 역순으로 정렬
     # print(type(qlist))
-    for q in qlist:
-        print(q.question_text, q.pub_date)
+    # for q in qlist:
+    #     print(q.question_text, q.pub_date)
 
     # 삭제
     # q = Question.objects.get(id=2)
     # q.delete()
 
     return render(request, 'polls/test.html')
+
+
+def insert(request):
+    q = Question(question_text='가고 싶은 곳은?', pub_date='2020-01-28')
+    q.save()
+    return render(request, 'polls/insert.html')
+
+
+def list(request):
+    qlist = Question.objects.all()
+    temp = {'qs' : qlist}
+    return render(request, 'polls/list.html', temp)

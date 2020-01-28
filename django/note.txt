@@ -81,3 +81,19 @@ config/urls.py
 polls/urls.py => 'test/'
 views.test => test.html
 
+#----------------------------------------
+myconfig/polls/templates/polls/list.html
+http://127.0.0.1:8000/polls/list -> list.html에 모든 질문 내용이 보여짐
+
+#----------------------------------------
+관리자 페이지
+python manage.py createsuperuser  -> 관리자 만들기
+abc / 1234  -> id / password
+polls/admin.py
+admin.site.register(Question)
+admin.site.register(Choice)
+
+1) 관리자 페이지에 Member 테이블을 등록
+2) member/templates/member/insert.html 생성
+    username, pw, hp, name을 입력받을수 있는 form 작성
+localhost:8000/member/insert --> insert.html 나타나도록 하세요

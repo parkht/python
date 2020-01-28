@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-list.html
+    <h3>Member</h3>
+    <form>
+        <table border="1">
+            <tr align="center">
+                <td >사용자 id</td>
+                <td>사용자 hp</td>
+                <td>사용자명</td>
+            </tr>
+            {% for m in ml %}
+            <tr>
+                <td>{{ m.username }}</td>
+                <td>{{ m.hp }}</td>
+                <td>{{ m.name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
 </body>
 </html>
