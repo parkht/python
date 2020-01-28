@@ -13,7 +13,7 @@ python manage.py startapp polls =>polls라는 폴더 생성이됨
 
 --3)애플리케이션 등록(settings.py)
   myconfig\config\settings.py => INSTALLED_APPS=[]여기에 polls 등록
-  DATABASES = {}는 기본설정인 'db.sqlite3' 사용
+  DATABASES = {}는 기본설정인 'db.sqlite3' 사
 
 --4)기본 테이블 생성(1번만)
 python manage.py migrate => db.sqlite3생성
@@ -65,3 +65,19 @@ myconfig\config\urls.py를 myconfig\member\urls.py로 복사한다.
 member\urls.py 수정 and myconfig\config\urls.py 수정
 member\views.py 수정
 myconfig\member\templates\member\list.html 생성
+
+#---------------------------------------
+myconfig/polls/templates/polls/index.html
+python manage.py runserver=> 서버실행
+http://127.0.0.1:8000/polls
+config/urls.py
+polls/urls.py
+views.py
+
+#----------------------------------------
+myconfig/polls/templates/polls/test.html
+http:127.0.0.1:8000/polls/test
+config/urls.py
+polls/urls.py => 'test/'
+views.test => test.html
+

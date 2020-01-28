@@ -18,6 +18,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index),  # http://localhost:8000/polls/index.html
+    path('', views.index),     # http://localhost:8000/polls/index.html
+    path('test/', views.test),  # http://localhost:8000/polls/test/
+
+
 #    path('insert/', views.insert),  # http://localhost:8000/polls/insert/index.html
 ]
