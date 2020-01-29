@@ -1,0 +1,60 @@
+# django 설치
+pip install django
+
+# django project 생성
+django-admin startproject config
+
+# polls 생성
+cd mysecond  -> manage.py 있는 폴더에서 Terminal 실행어 입력
+python manage.py startapp polls
+
+# templates 폴더 생성
+MTV => M(models.py) T(templates.py) V(views.py)
+MVC => M            V               C
+
+# polls를 settings.py에 등록
+mysecond/config/settings.py의 INSTALLED_APPS = [...]에
+'polls' 등록
+
+# 기본 table 생성 => django에서 사용할 기본적인 table 생성
+python manage.py migrate
+
+# cmd(명령 프롬프트)에서 생성된 table 확인
+C:\Users\hong>cd c:\sqlite
+c:\sqlite>sqlite3 d:\git_hub\python\django2\mysecond\db.sqlite3
+
+# mode
+
+# 테이블 생성 또는 수정코드 작성
+python manage.py makemigrations
+python manage.py makemigrations polls  -> polls에 있는 테이블만 생성
+
+# 테이블 생성 또는 수정코드 적용
+python manage.py migrate polls
+
+# 서버 실행
+python manage.py runserver
+
+# 관리자 생성
+python manage.py createsuperuser
+abc / 1234
+
+# 테이블 수정(models.py)
+python manage.py makemigrations polls
+python manage.py migrate polls
+
+# 관리자 페이지에 테이블 등록(admin.py)
+from django.contrib import admin
+from .models import Question, Choice
+admin.site.register(Question)
+admin.site.register(Choice)
+
+# 관지라 페이지 기능 확장(관리의 편리성 때문)
+
+# member
+setting.py
+MVT 형태 만들기
+python manage.py makemigrations member
+python manage.py migrate
+
+
