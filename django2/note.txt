@@ -57,4 +57,11 @@ MVT 형태 만들기
 python manage.py makemigrations member
 python manage.py migrate
 
+# member/index.html
 
+# member/list.html
+
+# member/detail.html
+
+# 템플릿파일 작성
+mysecond/templates/base.html
