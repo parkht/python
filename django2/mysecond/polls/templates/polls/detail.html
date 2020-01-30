@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
+<h2>polls/detail</h2>
+<table class="table">
+    <tr>
+        <td>질문 내용 : </td>
+        <td>{{q.question_text}}</td>
+    </tr>
+    <tr>
+        <td>질문 날짜 : </td>
+        <td>{{q.pub_date}}</td>
+    </tr>
+</table>
+<a href="/polls" class="btn btn-success" role="button">목록보기</a>
+{% endblock %}

@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
 <h2>회원가입</h2>
 <div>{{ err }}</div>
 <form method="post" action=".">
     {% csrf_token %}
-    <div>사용자 id :
-        <input type="text" name="username" maxlength="50">
+    <div>
+        사용자 id : <input type="text" name="username" maxlength="50">
     </div>
-    <div>암  호 :
-        <input type="password" name="pw" maxlength="50">
+    <div>
+        암  호 : <input type="password" name="pw" maxlength="50">
     </div>
-    <div>암호확인 :
-        <input type="password" name="repw">
+    <div>
+        암호확인 : <input type="password" name="repw">
     </div>
-    <div>핸 드 폰 :
-        <input type="text" name="hp" maxlength="50">
+    <div>
+        핸 드 폰 : <input type="text" name="hp" maxlength="50">
     </div>
-    <div>Email :
-        <input type="text" name="email" maxlength="50">
+    <div>
+        Email : <input type="text" name="email" maxlength="50">
     </div>
-    <div>사용자명 :
-        <input type="text" name="name" maxlength="50">
+    <div>
+        사용자명 : <input type="text" name="name" maxlength="50">
     </div>
     <button type="submit">완료</button>
     <button type="reset">취소</button>
 </form>
-</body>
-</html>
+{% endblock %}

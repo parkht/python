@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
 <h2>member/detail</h2>
 <p/>
-<table border="1">
+<table class="table">
     <tr>
-        <td width="10%">회원번호 : </td>
-        <td width="20%">{{ m.id }}</td>
+        <td>회원번호 : </td>기
+        <td>{{ m.id }}</td>
     </tr>
     <tr>
-        <td width="10%">username : </td>
-        <td width="20%">{{ m.username }}</td>
+        <td>username : </td>
+        <td>{{ m.username }}</td>
     </tr>
     <tr>
-        <td width="10%">hp : </td>
-        <td width="20%">{{ m.hp }}</td>
+        <td>hp : </td>
+        <td>{{ m.hp }}</td>
     </tr>
     <tr>
-        <td width="10%">email : </td>
-        <td width="20%">{{ m.email}}</td>
+        <td>email : </td>
+        <td>{{ m.email}}</td>
     </tr>
     <tr>
-        <td width="10%">name : </td>
-        <td width="20%">{{ m.name }}</td>
+        <td>name : </td>
+        <td>{{ m.name }}</td>
     </tr>
 </table>
 <p/>
-<a href='/member/list'>목록으로</a>
-</body>
-</html>
+<a href='/member/list' class="btn btn-success" role="button">목록보기</a>
+{% endblock %}

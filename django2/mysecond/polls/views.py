@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import Question
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here. (java = controller)
-def index(request):
-    return render(request,'polls/index.html')
+def detail(request, polls_id):
+    question = get_object_or_404(Question, pk=polls_id)
+    return render(request,'polls/detail.html',{'q':question})
 
 
 def test(request):

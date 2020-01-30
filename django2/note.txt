@@ -65,3 +65,25 @@ python manage.py migrate
 
 # 템플릿파일 작성
 mysecond/templates/base.html
+config/settings.py 수정
+TEMPLATES = [
+    {
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    }
+        ]
+
+# 참고자료
+f = open('data\\names.csv', 'r')  <- 윈도우
+f = open('data/names.csv', 'r')  <- mac, linux
+f = open(os.path.join('data', 'names.csv'), 'r')
+os.path.join()은 os에 따라 다른 경로 형태를 맞춰준다.
+
+# css 적용
+static파일 : css, js, 이미지등
+mysecond/static/winter.css
+settings.py
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS=[os.path.join(BASE_DIR, 'static')]
+
+mysecond/templates/base.html
+    <link rel="stylesheet" href="/static/winter.css"/>

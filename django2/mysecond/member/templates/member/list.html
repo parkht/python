@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}회원리스트{% endblock %}
+{% block content %}
 <h2>member/list</h2>
-<ul>
+<ul class="container">
 {% for m in ms %}
-    <li><a href="/member/{{m.id}}">{{ m.username }}</a> - {{ m.email }}</li>
+    <li class="list-group-item"><a href="/member/{{m.id}}">{{ m.username }} - {{ m.email }}</a></li>
 {% endfor %}
 </ul>
-</body>
-</html>
+{% endblock %}

@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/winter.css"/>
 </head>
 <body>
-
+<div class="container">
+{% block menubar %}
+<div class="btn-group btn-group-justified">
+    <a href="/polls" class="btn btn-primary">설문관리</a>
+    <a href="/member/list" class="btn btn-primary">회원관리</a>
+</div>
+{% endblock %}
+<hr>
+{% block content %}
+{% endblock %}
+</div>
 </body>
 </html>
