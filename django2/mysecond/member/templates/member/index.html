@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h2>Index</h2>
-<p></p>
+{% extends 'base.html' %}
+{% block title %}회원게시판{% endblock %}
+{% block content %}
 {% for n in names %}
     <div>{{n}}</div>
 {% endfor %}
@@ -19,5 +13,4 @@
 {% for no in number %}
     <div>{{no}} - {{no|add:'3'}} - {{no|add:no}}</div>
 {% endfor %}
-</body>
-</html>
+{% endblock %}
