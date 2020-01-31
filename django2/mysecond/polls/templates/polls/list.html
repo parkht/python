@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}회원가입{% endblock %}
+{% block title %}설문관리{% endblock %}
 
 {% block content %}
-<h3>질문 게시판</h3>
+<h3>polls/list.html</h3>
 <ul class="container">
 {% for q in qs %}
-    <li class="list-group-item"><a href="/polls/{{q.id}}">{{q.id}} {{q.question_text}} {{q.pub_date}}</a></li>
+    <li class="list-group-item"><a href="{% url 'polls:detail' q.id %}">{{q.id}}  --  {{q.question_text}}  --  {{q.pub_date}}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

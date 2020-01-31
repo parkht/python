@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
+<h2>polls/vote</h2>
+<table class="table">
+    <tr>
+        <td>질문 내용 : </td>
+        <td>{{q.question_text}}</td>
+    </tr>
+    <tr>
+        <td>질문 날짜 : </td>
+        <td>{{q.pub_date}}</td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <td align="center">답변 결과</td>
+        <td>투표수</td>
+    </tr>
+    {% for c in q.choice_set.all %}
+    <tr>
+        <td align="center">{{c.choice_text}}</td>
+        <td>{{c.vote}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{%url 'polls:detail' q.id%}" class="btn btn-success" role="button">돌아가기</a>
+<span style="float:right;"><a href="{%url 'polls:list'%}" class="btn btn-success" role="button" >목록가기</a></span>
+{% endblock %}

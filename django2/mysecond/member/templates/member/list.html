@@ -4,7 +4,10 @@
 <h2>member/list</h2>
 <ul class="container">
 {% for m in ms %}
-    <li class="list-group-item"><a href="/member/{{m.id}}">{{ m.username }} - {{ m.email }}</a></li>
+    <li class="list-group-item"><a href="{% url 'member:detail' m.id %}">{{ m.username }} - {{ m.email }}</a></li>
 {% endfor %}
 </ul>
+<p/>
+<a href="{% url 'member:insert2' %}" class="btn btn-success" role="button">회원등록</a>
 {% endblock %}
+

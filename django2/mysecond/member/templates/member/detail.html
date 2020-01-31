@@ -2,11 +2,21 @@
 {% block title %}회원가입{% endblock %}
 
 {% block content %}
+<script>
+    function delchk(){
+        r=confirm('정말로 삭제?')
+        if (r==true){
+            u = '/member/'+{{m.id}}+'/delete'
+            alert(u)
+            location.href=u
+        }
+    }
+</script>
 <h2>member/detail</h2>
 <p/>
 <table class="table">
     <tr>
-        <td>회원번호 : </td>기
+        <td>회원번호 : </td>
         <td>{{ m.id }}</td>
     </tr>
     <tr>
@@ -27,5 +37,7 @@
     </tr>
 </table>
 <p/>
-<a href='/member/list' class="btn btn-success" role="button">목록보기</a>
+<a href="{% url 'member:list2' %}" class="btn btn-success" role="button">목록보기</a>
+<a href="javascript:delchk()" class="btn btn-danger" role="button">삭제</a>
+<a href="{% url 'member:update' m.id%}" class="btn btn-warning" role="button">수정</a>
 {% endblock %}

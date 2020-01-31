@@ -13,5 +13,16 @@
         <td>{{q.pub_date}}</td>
     </tr>
 </table>
-<a href="/polls" class="btn btn-success" role="button">목록보기</a>
+<form class="table" method="post" action="{% url 'polls:vote' q.id %}">
+    {%csrf_token%}
+    <div>답변 내용 : </div>
+    {% for c in q.choice_set.all %}
+    <div>
+        <input type="radio" name="ch" value="{{c.id}}"/>{{c}}
+    </div>
+    {% endfor %}
+    <br>
+    <input type="submit" value="투표하기" class="btn btn-success">
+    <span style="float:right;"><a href="/polls" class="btn btn-success" role="button">설문목록</a></span>
+</form>
 {% endblock %}

@@ -1,7 +1,37 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Member
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
+from datetime import datetime
+
+
+def update(request, member_id):
+    if request.method == 'GET':
+        member = get_object_or_404(Member, pk=member_id)
+        # member.save()
+        return render(request, 'member/update.html',{'m':member})
+    elif request.method == 'POST':
+        id = request.POST['id']
+        username = request.POST['username']
+        hp = request.POST['hp']
+        email = request.POST['email']
+        name = request.POST['name']
+        pw = request.POST['pw']
+        regdate = datetime.now()
+        m = Member(
+            id=id,
+            username=username,
+            hp=hp,
+            email=email,
+            name=name,
+            pw=pw,
+            regdate=regdate
+        )
+        m.save()
+        return HttpResponseRedirect(reverse('member:detail', args=(member_id,)))
+
 
 
 def detail(request, member_id):
@@ -9,6 +39,11 @@ def detail(request, member_id):
     member = get_object_or_404(Member, pk=member_id)
     return render(request, 'member/detail.html', {'m': member})
 
+
+def delete(request, member_id):
+    member = get_object_or_404(Member, pk=member_id)
+    member.delete()
+    return HttpResponseRedirect(reverse('member:list2'))
 
 def list(request):
     members = Member.objects.all()

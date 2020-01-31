@@ -2,11 +2,18 @@ from django.shortcuts import render
 from .models import Question
 from django.shortcuts import get_object_or_404
 
-
 # Create your views here. (java = controller)
-def detail(request, polls_id):
-    question = get_object_or_404(Question, pk=polls_id)
-    return render(request,'polls/detail.html',{'q':question})
+def vote(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    selected_choice = question.choice_set.get(id=request.POST['ch'])
+    selected_choice.vote += 1
+    selected_choice.save()
+    return render(request, 'polls/vote.html', {'q':question})
+
+
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request,'polls/detail.html', {'q':question})
 
 
 def test(request):

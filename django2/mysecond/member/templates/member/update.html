@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
+<h2>member/update</h2>
+<table class="table">
+<form action="." method="post">
+    {%csrf_token%}
+    <tr>
+        <td>회원번호(수정불가) : </td>
+        <td><input type="text" value="{{m.id}}" name="id" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td>username : </td>
+        <td><input type="text" value="{{ m.username }}" name="username"></td>
+    </tr>
+    <tr>
+        <td>hp : </td>
+        <td><input type="text" value="{{ m.hp }}" name="hp"></td>
+    </tr>
+    <tr>
+        <td>email : </td>
+        <td><input type="text" value="{{ m.email}}" name="email"></td>
+    </tr>
+    <tr>
+        <td>name : </td>
+        <td><input type="text" value="{{ m.name }}" name="name"></td>
+    </tr>
+    <tr>
+    <td colspan="2"><button type="submit" class="btn btn-success">수정완료</button>
+    <button type="reset" class="btn btn-danger">취소</button></td>
+    </tr>
+    <input type="hidden" value="{{ m.pw }}" name="pw">
+    <input type="hidden" value="{{ m.regdate }}" name="regdate">
+</form>
+</table>
+{% endblock %}
