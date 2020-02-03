@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>books/publisher_list</h2>
+<ol>
+    {% for p in object_list %}
+    <li><a href="{%url 'books:publisher_detail' p.id%}">{{p.name}}</a></li>
+    {% endfor %}
+</ol>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# maria db에서 tom user생성
+create database bookdb charater set utf8;
+show databases;
+create user 'tom'@'localhost' identified by 'jerry';
+grant all privileges on bookdb.* to 'tom'@'localhost';
+flush privileges;
+
+# -----------------------------------------
+pip install django
+django-admin startproject shoppingmall
+cd shoppingmall
+python manage.py startapp books
+
+settings.py => installed_apps => 'books' 추가
+
+# ------------------------------------------
+마리아 DB연동
+pip install mysqlclient
+settings.py => databases => 수정
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bookdb',
+        'USER': 'tom',
+        'PASSWORD': 'jerry',
+        'HOST': '127.0.0.1',
+        'PORT': '3307',
+    }
+}
+
+# -----------------------------------------
+기본 테이블 생성 => mariaDB에 생성
+python manage.py migrate
+
+#------------------------------------------
+테이블 정의 및 구현
+django/shoppingmall/books/models.py => Publisher, Author, Book
+python manage.py makemigrations books
+python manage.py migrate books
+
+# -----------------------------------------
+관리자 페이지 등록(admin.py) 및 관리자 생성
+python manage.py createsuperuser
+python manage.py runserver
+
+#------------------------------------------
+http://127.0.0.1:8000/books/publisher
