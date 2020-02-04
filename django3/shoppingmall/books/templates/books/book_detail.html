@@ -20,5 +20,10 @@
         <td>지은이 : </td>
         <td>{%for a in object.authors.all%}{{a}}&nbsp;&nbsp;&nbsp;{%endfor%}</td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <a href="/books/book" class="btn btn-success">목록가기</a>
+        </td>
+    </tr>
 </table>
 {% endblock %}

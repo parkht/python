@@ -45,3 +45,34 @@ python manage.py runserver
 
 #------------------------------------------
 http://127.0.0.1:8000/books/publisher
+
+# -----------------------------------------
+이미지 등록(models.py)
+pip install Pillow
+python manage.py makemigrations books
+python manage.py migrate books
+-- 사진 폴더 지정 (shoppingmall/media)
+setting => 추가
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+mall/urls.py => 수정
+urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+urlpatterns
+
+models.py => 추가 (이미지 변경시 전에 이미지 삭제)
+def save(self, *args, **kwargs):
+    try:
+        old = Author.object.get(id=self.id)
+        if old.photo != self.photo:
+            old.photo.delete(save=False)
+    except:
+        pass
+    super(Author, self).save(*args, **kwargs)
+
+#----------------------------------------------
+css파일 적용
+shoppingmall/static 폴더 생성
+shoppingmall/static/base.css 생성
+shoppingmall/mall/settings.py
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+base.html

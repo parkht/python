@@ -8,13 +8,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/static/winter.css"/>
+    <link rel="stylesheet" href="/static/base.css"/>
 </head>
 <body>
+<div id="menu1" class="container">
+    <ul>
+        {%block menu1%}
+        <li><a href="/">HOME</a></li>
+        <li><a href="/admin/">Admin</a></li>
+        {%endblock%}
+    </ul>
+</div>
 <div class="container">
 {% block menubar %}
 <div class="btn-group btn-group-justified">
     <a href="/books/publisher" class="btn btn-primary">출판사</a>
-<!--    <a href="/member/list" class="btn btn-primary">회원관리</a>-->
+    <a href="/books/author" class="btn btn-primary">저자리스트</a>
+    <a href="/books/book" class="btn btn-primary">책보기</a>
 </div>
 {% endblock %}
 <hr>

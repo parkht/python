@@ -1,0 +1,12 @@
+{% extends 'base_books.html' %}
+{% block title %}Publisher{% endblock %}
+
+{% block content %}
+<h2>books/author_update</h2>
+<p/>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="수정" class="btn btn-success"/>
+</form>
+{% endblock %}

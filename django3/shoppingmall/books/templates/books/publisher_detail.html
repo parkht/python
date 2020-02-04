@@ -1,0 +1,27 @@
+{% extends 'base_books.html' %}
+{% block title %}Author{% endblock %}
+
+{% block content %}
+<h2>books/publisher_detail</h2>
+<table class="table">
+    <tr>
+        <td>출판사 : </td>
+        <td>{{object.name}}</td>
+    </tr>
+    <tr>
+        <td>주  소 : </td>
+        <td>{{object.address}}</td>
+    </tr>
+    <tr>
+        <td>사이트 : </td>
+        <td>{{object.website}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <a href="/books/publisher/update/{{object.id}}" class="btn btn-success">수정</a>
+            <a href="/books/publisher/delete/{{object.id}}" class="btn btn-danger">삭제</a>
+            <a href="/books/publisher" class="btn btn-success" style="float:right;">목록가기</a>
+        </td>
+    </tr>
+</table>
+{% endblock %}

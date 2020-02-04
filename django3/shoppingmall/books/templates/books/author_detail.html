@@ -1,0 +1,31 @@
+{% extends 'base_books.html' %}
+{% block title %}Author{% endblock %}
+
+{% block content %}
+<h2>books/author_detail</h2>
+<table class="table">
+    <tr>
+        <td>사  진 : {{object.photo.url}}</td>
+        <td><img src="{{object.photo.url}}"/></td>
+    </tr>
+    <tr>
+        <td>이  름 : </td>
+        <td>{{object.name}}</td>
+    </tr>
+    <tr>
+        <td>소  개 : </td>
+        <td>{{object.intro}}</td>
+    </tr>
+    <tr>
+        <td>이메일 : </td>
+        <td>{{object.email}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <a href="/books/author/update/{{object.id}}" class="btn btn-success">수정</a>
+            <a href="/books/author/delete/{{object.id}}" class="btn btn-danger">삭제</a>
+            <a href="/books/author" class="btn btn-success" style="float:right;">목록가기</a>
+        </td>
+    </tr>
+</table>
+{% endblock %}
