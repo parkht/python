@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Author{% endblock %}
+
+{% block content %}
+<h2>books/book_detail</h2>
+<table class="table">
+    <tr>
+        <td>책제목 : </td>
+        <td>{{object.title}}</td>
+    </tr>
+    <tr>
+        <td>출판사 : </td>
+        <td>{{object.publisher}}</td>
+    </tr>
+    <tr>
+        <td>출판일 : </td>
+        <td>{{object.pub_date}}</td>
+    </tr>
+    <tr>
+        <td>지은이 : </td>
+        <td>{%for a in object.authors.all%}{{a}}&nbsp;&nbsp;&nbsp;{%endfor%}</td>
+    </tr>
+</table>
+{% endblock %}
