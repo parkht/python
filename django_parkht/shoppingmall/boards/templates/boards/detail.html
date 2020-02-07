@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}boards{% endblock %}
+
+{% block content %}
+<h2>boards/detail</h2>
+<table class="table">
+    <tr>
+        <td>Title : </td>
+        <td>{{object.title}}</td>
+    </tr>
+    <tr>
+        <td>Name : </td>
+        <td>{{object.name}}</td>
+    </tr>
+    <tr>
+        <td>Email : </td>
+        <td>{{object.email}}</td>
+    </tr>
+    <tr>
+        <td>Content : </td>
+        <td>{{object.content}}</td>
+    </tr>
+    <tr>
+        <td>RegDate :</td>
+        <td>{{object.regdate}}</td>
+    </tr>
+    <tr>
+        <td>조회수 : </td>
+        <td>{{object.viewcnt}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <a href="/boards/update/{{object.id}}" class="btn btn-success">수정</a>
+            <a href="/boards/delete/{{object.id}}" class="btn btn-danger">삭제</a>
+            <a href="/boards/" class="btn btn-success" style="float:right;">목록가기</a>
+        </td>
+    </tr>
+</table>
+{% endblock %}

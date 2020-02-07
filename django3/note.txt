@@ -1,5 +1,5 @@
 # maria db에서 tom user생성
-create database bookdb charater set utf8;
+create database bookdb character set utf8;
 show databases;
 create user 'tom'@'localhost' identified by 'jerry';
 grant all privileges on bookdb.* to 'tom'@'localhost';
@@ -76,3 +76,17 @@ shoppingmall/static/base.css 생성
 shoppingmall/mall/settings.py
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 base.html
+
+# ---------------------------------------------
+메인 페이지 설정
+shoppingmall/mall/urls.py => 수정
+shoppingmall/mall/views.py => 생성
+shoppingmall/templates/home.html
+
+# ---------------------------------------------
+*args : 넘어오는 값의 갯수가 정해져 있지 않다.
+        tuple로 생성 (값1, 값2, ...)
+        가변의 의미
+**kwgs : 넘어오는 값의 갯수가 정해져 있지 않다.
+        dict로 생성 {'key1':'value', 'key2':'value', ...)
+        가변의 의미

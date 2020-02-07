@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}boards{% endblock %}
+
+{% block content %}
+<h2>boards/update</h2>
+<p/>
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="수정" class="btn btn-success"/>
+</form>
+{% endblock %}

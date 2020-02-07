@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="de2f26d4-002f-4220-89f6-7e474a3b2342" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../django3/data/song.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/function.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/json02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/let_it_be.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/papago01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/search_books.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/shoppingmall/mall/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/shoppingmall/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/soup1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django3/youtube_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/django4_parkht.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project64/.idea/project64.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project64/seaborn_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django3/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../django3/note.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1XQKLLEnV42sCCehHNcMEyzmGKg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../django2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de2f26d4-002f-4220-89f6-7e474a3b2342" name="Default Changelist" comment="" />
+      <created>1580972820188</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580972820188</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1040" y="261" key="FileChooserDialogImpl" timestamp="1580973446776">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="1040" y="261" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1580973446776" />
+  </component>
+</project>

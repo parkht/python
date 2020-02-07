@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block content%}
+<h2>게시판 페이지</h2>
+<table>
+    {%for b in object_list%}
+    <tr>
+        <td><a href="/boards/detail/{{b.id}}">{{b.title}} -- 조회수{{b.viewcnt}}</a></td>
+    </tr>
+    {%endfor%}
+</table>
+<a href="/boards/insert" class="btn btn-success">등록</a>
+{% endblock %}
