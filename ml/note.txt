@@ -1,0 +1,9 @@
+‪D:\study\ml 폴더 생성
+C:\Python\Anaconda3>python -m venv d:\study\ml
+D:\study\ml 하위 폴더 3개 생김
+--가상환경 활성화
+D:\study\ml\Scripts>activate.bat
+(ml0) D:\study\ml0\Scripts>
+
+--가상환경 비활성화
+(ml0) D:\study\ml0\Scripts>deactivate.bat
