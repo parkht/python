@@ -16,7 +16,7 @@ for year in range(1880, 2011):
     temp.append(df)
 
 data = pd.concat(temp, ignore_index=True)
-# print(data)
+print(data)
 # print(data[data['name']=='Mary'])
 # 연도, 성별에 따른 출생자수
 # total_births = data.pivot_table(index='year', columns='sex', values='births', aggfunc='sum')
