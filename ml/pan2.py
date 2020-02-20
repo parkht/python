@@ -182,5 +182,7 @@ visited = pd.read_csv('data/survey_visited.csv')
 
 ps = person.merge(survey, left_on='ident', right_on='person')
 # print(ps)
+print(site)
+print(visited)
 sv = site.merge(visited, left_on='name', right_on='site')
 print(sv)
