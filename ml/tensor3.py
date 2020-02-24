@@ -64,7 +64,7 @@ import cv2
 # 이미지 저장하기
 # cv2.imwrite('img/wn2.jpg', img)
 
-# 이리지 리사이징
+# 이미지 리사이징
 # img2 = cv2.resize(img, (200,200))
 # cv2.imwrite('img/wn3.jpg', img2)
 # plt.imshow(cv2.cvtColor(img2, cv2.COLOR_RGB2BGR))
@@ -110,16 +110,16 @@ import cv2
 #         print(r,' * ', d,' = ', t)
 
 # ------------------------------------------------------------------
-num = tf.placeholder(tf.int32)
-one = tf.constant(1)
-v = tf.Variable(0)
-op1 = tf.assign(v, v + one)
-hap = tf.Variable(0)
-op2 = tf.assign(hap, hap + v)
-with tf.Session() as sess:
-    sess.run(tf.global_variables_initializer())  # 변수 초기화
-    for i in range(sess.run(num, feed_dict={num: 15})):
-        print(sess.run([op1, op2]))
+# num = tf.placeholder(tf.int32)
+# one = tf.constant(1)
+# v = tf.Variable(0)
+# op1 = tf.assign(v, v + one)
+# hap = tf.Variable(0)
+# op2 = tf.assign(hap, hap + v)
+# with tf.Session() as sess:
+#     sess.run(tf.global_variables_initializer())  # 변수 초기화
+#     for i in range(sess.run(num, feed_dict={num: 15})):
+#         print(sess.run([op1, op2]))
 
 # ---------------------------------------------------------------------
 num = tf.placeholder(tf.int32)
