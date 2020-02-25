@@ -132,22 +132,21 @@ def mosaic(img, area, size):
     # plt.show()
 
 # ----------------------------------------------------------------
-x = [1, 2, 3]
-y = [1, 2, 3]
-w = tf.placeholder((tf.float32))
-h = w * x
-cost = tf.reduce_mean(tf.square(h - y))
-with tf.Session() as sess:
-    clist = []
-    wlist = []
-    for i in range(-30, 50):
-        temp_w = i * 0.1  # -3 ~ 5를 0.1단위로 변경
-        cc, ww = sess.run([cost, w], feed_dict={w:temp_w})
-        clist.append(cc)
-        wlist.append(ww)
-    plt.plot(wlist, clist)
-    plt.show()
-
+# x = [1, 2, 3]
+# y = [1, 2, 3]
+# w = tf.placeholder((tf.float32))
+# h = w * x
+# cost = tf.reduce_mean(tf.square(h - y))
+# with tf.Session() as sess:
+#     clist = []
+#     wlist = []
+#     for i in range(-30, 50):
+#         temp_w = i * 0.1  # -3 ~ 5를 0.1단위로 변경
+#         cc, ww = sess.run([cost, w], feed_dict={w:temp_w})
+#         clist.append(cc)
+#         wlist.append(ww)
+#     plt.plot(wlist, clist)
+#     plt.show()
 
 
 
