@@ -1,35 +1,37 @@
 import tensorflow as tf
 import numpy as np
 import pandas as pd
-# data=np.loadtxt('data/iris3.csv', dtype=np.float32, skiprows=1)
-# print(data.shape)
-# # 70%의 데이터로 학습, 30%데이터로 정확도를 검증
-# np.random.shuffle(data)
-# trainx, trainy = data[:105, :4], data[:105, 4:]
-# testx, testy = data[105:, :4], data[105:, 4:]
-# # print(trainx)
-# # print(trainy)
-# x = tf.placeholder(tf.float32, [None, 4])
-# y = tf.placeholder(tf.float32, [None, 3])
-# w = tf.Variable(tf.random_normal([4, 3]))
-# b = tf.Variable(tf.random_normal([3]))
-# z = tf.matmul(x, w) + b
-# h = tf.nn.softmax(z)
-#
-# tempcost = tf.nn.sigmoid_cross_entropy_with_logits(logits=z, labels=y)
-# cost = tf.reduce_mean(tempcost)
-# train = tf.train.GradientDescentOptimizer(0.06).minimize(cost)
-# with tf.Session() as sess:
-#     sess.run(tf.global_variables_initializer())
-#     for i in range(1001):
-#         sess.run(train, feed_dict={x:trainx, y:trainy})
-#         if i%100 == 0:
-#             print(sess.run(cost, feed_dict={x:trainx, y:trainy}))
-#     pred = sess.run(h, feed_dict={x:testx, y:testy})
-#     # print(pred)
-#     corr = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
-#     acc = tf.reduce_mean(tf.cast(corr, tf.float32))
-#     print('정확도 = ', sess.run(acc, feed_dict={x:testx, y:testy}))
+data=np.loadtxt('data/iris3.csv', dtype=np.float32, skiprows=1)
+print(data.shape)
+# 70%의 데이터로 학습, 30%데이터로 정확도를 검증
+# 여러분류중 하나를 선택하는 다중분류이기 때문에 tf.nn.softmax()를 사용한다.
+# 0~2 (원핫기법 적용전) => 100, 010, 001 (원핫기법 적용)
+np.random.shuffle(data)
+trainx, trainy = data[:105, :4], data[:105, 4:]
+testx, testy = data[105:, :4], data[105:, 4:]
+# print(trainx)
+# print(trainy)
+x = tf.placeholder(tf.float32, [None, 4])
+y = tf.placeholder(tf.float32, [None, 3])
+w = tf.Variable(tf.random_normal([4, 3]))
+b = tf.Variable(tf.random_normal([3]))
+z = tf.matmul(x, w) + b
+h = tf.nn.softmax(z)
+
+tempcost = tf.nn.sigmoid_cross_entropy_with_logits(logits=z, labels=y)
+cost = tf.reduce_mean(tempcost)
+train = tf.train.GradientDescentOptimizer(0.55).minimize(cost)
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    for i in range(1001):
+        sess.run(train, feed_dict={x:trainx, y:trainy})
+        if i%100 == 0:
+            print(sess.run(cost, feed_dict={x:trainx, y:trainy}))
+    pred = sess.run(h, feed_dict={x:testx})
+    # print(pred)
+    corr = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
+    acc = tf.reduce_mean(tf.cast(corr, tf.float32))
+    print('정확도 = ', sess.run(acc, feed_dict={x:testx, y:testy}))
 
 # ----------------------------------------------------------------------
 # data = np.loadtxt('data/zoo/zoo.csv', delimiter=',')
@@ -98,30 +100,23 @@ import pandas as pd
 
 # -------------------------------------------------------------------------
 # cars.csv를 읽어 속도가 50일때의 제동거리를 예측하세요(회귀)
-data = np.loadtxt('data/cars.csv', delimiter=',', skiprows=1, unpack=True)
-print(data)
-# data[0] => 데이터, data[1] => 정답
-x = tf.placeholder(tf.float32, [None])
-y = tf.placeholder(tf.float32, [None])
-w = tf.Variable(tf.random_normal([1]))
-b = tf.Variable(tf.random_normal([1]))
-h = w*x + b
-cost = tf.reduce_mean(tf.square(h - y))
-train = tf.train.GradientDescentOptimizer(0.0035).minimize(cost)
-with tf.Session() as sess:
-    sess.run(tf.global_variables_initializer())
-    for i in range(3001):
-        sess.run(train, feed_dict={x:data[0], y:data[1]})
-        if i%100 == 0:
-            print(sess.run(cost, feed_dict={x:data[0], y:data[1]}))
-    print('예측 : ', sess.run(h, feed_dict={x:[50]}))
-
-
-
-
-
-
-
+# data = np.loadtxt('data/cars.csv', delimiter=',', skiprows=1, unpack=True)
+# print(data)
+# # data[0] => 데이터, data[1] => 정답
+# x = tf.placeholder(tf.float32, [None])
+# y = tf.placeholder(tf.float32, [None])
+# w = tf.Variable(tf.random_normal([1]))
+# b = tf.Variable(tf.random_normal([1]))
+# h = w*x + b
+# cost = tf.reduce_mean(tf.square(h - y))
+# train = tf.train.GradientDescentOptimizer(0.0035).minimize(cost)
+# with tf.Session() as sess:
+#     sess.run(tf.global_variables_initializer())
+#     for i in range(3001):
+#         sess.run(train, feed_dict={x:data[0], y:data[1]})
+#         if i%100 == 0:
+#             print(sess.run(cost, feed_dict={x:data[0], y:data[1]}))
+#     print('예측 : ', sess.run(h, feed_dict={x:[50]}))
 
 
 
